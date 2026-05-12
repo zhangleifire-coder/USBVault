@@ -9,6 +9,18 @@
     <DefineConstants>$(DefineConstants);WINDOWS_DESKTOP</DefineConstants>
   </PropertyGroup>
 
+  <!--
+    On macOS, XAML files and their code-behind files cannot be built because
+    the WPF reference assemblies (PresentationFramework, PresentationCore, etc.)
+    are not available on this platform. Exclude them on non-Windows builds.
+    The app stub in App.xaml.cs provides a minimal entry point for macOS.
+  -->
+  <ItemGroup Condition="'$(OS)' != 'Windows_NT'">
+    <Page Remove="**/*.xaml" />
+    <Compile Remove="**/*.xaml.cs" />
+    <EmbeddedResource Remove="**/*.xaml" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\USBVault.Common\USBVault.Common.csproj" />
   </ItemGroup>
