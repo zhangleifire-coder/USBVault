@@ -13,4 +13,8 @@
     <ProjectReference Include="..\USBVault.Common\USBVault.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Management" Version="10.0.7" />
+  </ItemGroup>
+
 </Project>
