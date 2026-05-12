@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>USBVault.Client</RootNamespace>
+    <AssemblyName>USBVault.Client</AssemblyName>
+    <DefineConstants>$(DefineConstants);WINDOWS_DESKTOP</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\USBVault.Common\USBVault.Common.csproj" />
+  </ItemGroup>
+
+</Project>
